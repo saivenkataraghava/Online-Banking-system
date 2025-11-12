@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Banking System - Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            width: 95%;
+            padding: 10px;
+            background-color: #4facfe;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00c6ff;
+        }
+        .link {
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+        }
+        .link a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Online Banking Login</h2>
+
+        <!-- Optional: show success/error message -->
+        <div class="message">
+            <% 
+                String msg = request.getParameter("msg");
+                if ("invalid".equals(msg)) { 
+                    out.print("Invalid username or password!"); 
+                } else if ("registered".equals(msg)) { 
+                    out.print("Registration successful! Please login."); 
+                }
+            %>
+        </div>
+
+        <!-- Form action mapped to LoginServlet -->
+        <form action="LoginServlet" method="post">
+            <input type="text" name="username" placeholder="Enter Username" required /><br/>
+            <input type="password" name="password" placeholder="Enter Password" required /><br/>
+            <input type="submit" value="Login">
+        </form>
+
+        <div class="link">
+            Don't have an account? <a href="register.jsp">Register here</a>
+        </div>
+    </div>
+
+</body>
+</html>

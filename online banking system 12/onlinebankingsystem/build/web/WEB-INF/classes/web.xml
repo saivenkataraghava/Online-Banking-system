@@ -1,0 +1,30 @@
+<web-app>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.bank.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.bank.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TransferServlet</servlet-name>
+        <servlet-class>com.bank.servlet.TransferServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TransferServlet</servlet-name>
+        <url-pattern>/TransferServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+
